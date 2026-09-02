@@ -1,0 +1,59 @@
+
+Bandit Level 4 → Level 5
+Level Goal
+The password for the next level is stored in the only human-readable file in the inhere directory. Tip: if your terminal is messed up, try the “reset” command.
+
+
+
+
+bandit4@bandit:~/inhere$ ls
+-file00  -file01  -file02  -file03  -file04  -file05  -file06  -file07  -file08  -file09
+bandit4@bandit:~/inhere$ ls -lah
+total 48K
+-rw-r----- 1 bandit5 bandit4   33 Jun 24 14:59 -file00
+-rw-r----- 1 bandit5 bandit4   33 Jun 24 14:59 -file01
+-rw-r----- 1 bandit5 bandit4   33 Jun 24 14:59 -file02
+-rw-r----- 1 bandit5 bandit4   33 Jun 24 14:59 -file03
+-rw-r----- 1 bandit5 bandit4   33 Jun 24 14:59 -file04
+-rw-r----- 1 bandit5 bandit4   33 Jun 24 14:59 -file05
+-rw-r----- 1 bandit5 bandit4   33 Jun 24 14:59 -file06
+-rw-r----- 1 bandit5 bandit4   33 Jun 24 14:59 -file07
+-rw-r----- 1 bandit5 bandit4   33 Jun 24 14:59 -file08
+-rw-r----- 1 bandit5 bandit4   33 Jun 24 14:59 -file09
+drwxr-xr-x 2 root    root    4.0K Jun 24 14:59 .
+drwxr-xr-x 3 root    root    4.0K Jun 24 14:59 ..
+bandit4@bandit:~/inhere$ cat ./-file01
+�X&v{����M=�&�.����q��� Ɩp��G�bandit4@bandit:~/inhere$ cat ./-file02
+�e��tE�XQ�7�[��8�s�_"،�WW+��b�1
+                               bandit4@bandit:~/inhere$ cat ./-file03
+���M�����B�}�ȼ%�8�j���Ji��CH�Lbandit4@bandit:~/inhere$ cat ./-file04
+␦�Ei��E��`�Y�k�q��3S/��9���bandit4@bandit:~/inhere$ cat ./-file05
+�P@�Kk���HJ�͡���<�M�J�2ϸ��bandit4@bandit:~/inhere$ cat ./-file06
+�{g�>�����-�{�
+              �!
+                0A�����F$\X�bandit4@bandit:~/inhere$ cat ./-file07
+6C7h9GD8M6ai5nr7wo1RonrzFjj9yIrG
+bandit4@bandit:~/inhere$ cat ./-file08
+$�.R��z`!�km�fN�        Oo�C��=bandit4@bandit:~/inhere$ cat ./-file09
+
+
+bandit4@bandit:~/inhere$ file ./-file0*
+./-file00: data
+./-file01: data
+./-file02: OpenPGP Secret Key
+./-file03: data
+./-file04: data
+./-file05: data
+./-file06: Non-ISO extended-ASCII text, with NEL line terminators
+./-file07: ASCII text
+./-file08: data
+./-file09: data
+bandit4@bandit:~/inhere$
+
+bandit4@bandit:~/inhere$ file ./-file0* | grep "ASCII text"
+./-file06: Non-ISO extended-ASCII text, with NEL line terminators
+./-file07: ASCII text
+bandit4@bandit:~/inhere$ cat ./-file07
+6C7h9GD8M6ai5nr7wo1RonrzFjj9yIrG
+
+
