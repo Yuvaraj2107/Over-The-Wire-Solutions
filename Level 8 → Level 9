@@ -1,0 +1,124 @@
+ Level 8 → Level 9
+Level Goal
+The password for the next level is stored in the file data.txt and is the only line of text that occurs only once
+
+Commands you may need to solve this level
+grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd
+
+Answer EjmOSvuAu7sGAHqHVcBDPirRe9T03kxl
+
+
+bandit8@bandit:~$ wc data.txt
+ 1001  1001 33033 data.txt
+bandit8@bandit:~$ wc -l data.txt
+1001 data.txt
+bandit8@bandit:~$ sort data.txt | wc -l
+1001
+bandit8@bandit:~$ sort data.txt | uniq | wc -l
+101
+bandit8@bandit:~$ sort data.txt | uniq -c = 1 | wc -l
+uniq: Could not open '=': No such file or directory
+0
+bandit8@bandit:~$ sort data.txt | uniq -c
+     10 0LTDNpAmqqfuE0FlE0ksGf6c0Kraspzs
+     10 1cKKjk7M0Pl2cPUbYgc9W4307bYC0ohF
+     10 1PesxCa7cihwvCvzBeKAcjKkjUwp7i2z
+     10 1QDbI0z3b488UD7pbhxxzAscVKVGJIqi
+     10 1s9qPOht8yUgFvAX0FkoGmIWLCTdDdvf
+     10 23xwbwirY6MYQ74fPZF0nXiEP885Mq9v
+     10 4a3khgRIuLuBCaxG9zKwL26NsWz1riwQ
+     10 4ErstEQiIHgE1VEeFIM52pldPybhoLNn
+     10 4PSZT0xXsJxz99aAVnAwxDxruDwXRVBF
+     10 4Za0gJjjbHxvrFfBXzeLSCL3RkUIfZDt
+     10 70uHTuxrBXZLib5mpJcGI79JOaNfsg1l
+     10 7qGlWRGyh6mBia5MH2HTWKhBSVyoUA2F
+     10 82kH7YDhcD0UJabl61bhYNKgcVytEF1W
+     10 87OB8A4BuPkqxHMePHOkhTeDDNkDPIke
+     10 87xOVvUON2omm8aFP8p90bU5XDUgjUBH
+     10 8O9FvCQeGWInYiLUegyFV2wbb9NFhuqg
+     10 90xEyvXlstl8dRKPiszlDdrPb2zEsIxH
+     10 9E3UGT9z02VsqTV4nvnLWD5pOCYpeMpu
+     10 9hSSC3zPcPw0htJNdgMamzXPlbVgc6Ow
+     10 9l2sZl3BIRPtTSvr1ql6aOr4PVbIHxq9
+     10 9lc65d38xb5Mf2X1HmJYtHTTXIbNPOVK
+     10 9q013YSeArsZTSh6leJJE4OJKQ5BCdnQ
+     10 A67dzD7YWCP1YYLJRZ1U9rLO9ZpgsPNu
+     10 atbufd245zR1E9L82eOHKY5v7scHZLLG
+     10 cPcH5IdJYxO6vM8q006IXHuypAVGbTRp
+     10 CS1EbPmfoKMMVY6z9w8IS5dHkQdDvTQO
+     10 DgHzv7fYH97INXRrPmmphZKHMLkEOl6B
+     10 dNsZD8bqL8QTaFMzg1GmgXSJc9o8HMqr
+     10 dQAGOUE0OqoqUTFNZxDxPEuJVJ1n0516
+     10 DRw59WuT9wCmSl9vH68OKMaGsYSHrMFV
+     10 E3hJH5FG3FH1bCvhBl7Vzkyw7sLe6kYU
+     10 e9yTqnbiARl2VtknaQtMKIdSprkTWWfY
+      1 EjmOSvuAu7sGAHqHVcBDPirRe9T03kxl
+     10 eR5ZCvdhUcbCGp9SpdHE06Yj4j2xX9Ou
+     10 f8hfrg0rhuvAqqwZZTyJgA7ylXgA7ume
+     10 FKsVjWbVzdz5yAHZTjhYnDqm57rFdmOU
+     10 g05CCNIncRsLm0APYiwLoLyT1EZeS097
+     10 gba8049P5ZPiTB27e5wzlHzeab57imTS
+     10 gpOV7YmaU31b078r81cXch48YtdCePz2
+     10 GS7QqKgcCjCZMYNiDgHI7B9eRb4oGKec
+     10 gz2HQgw2clh7K0ImmNk0GFvgnL3ZKII4
+     10 huAkGNGBq3tK1YYc2uGtzAf31wPM7Was
+     10 I8fJN0v9oiPS7HFj6zQJK32Jyn7mYw2Y
+     10 I8zNfAo6WbQfoDYlUuiXjOhridq2DwrC
+     10 IbdwbkaNWVGPrvL1xQCatdfRxoDKUxma
+     10 IcOVULDLnIfXKUBRn1bhcLAQeck6UJvd
+     10 Inhvt5Na9Ul3QzPX8e65EUvTr5mKAzqd
+     10 iPlLUedeh2azbvpbLmQSbGVmB8Yx2lX2
+     10 jI0NhebQjeEXAGTRzfZ2OS9bCb9qoWjh
+     10 l17bIRHFpVkqSKPbHdyBiLg85gUxiAVy
+     10 LrMfJZzh6fsWWi4d21CZZpwqBZadfzLA
+     10 M5HAO653ldC88nVDrHvlX0rym4k6HbFZ
+     10 mAnUMJIc31o264h2TWMLJpLKG1EzKC4K
+     10 MLE9yYGGce8hBFWLA0Mp5d9bGrtSKRoC
+     10 n5ZPGiB5aUuaSxCRN1haoK1MN2m3je42
+     10 N8qk1XREjamf9g531BqEbpJSjWPK4jt2
+     10 n9CPDhddWtI7LVGVnggcb5BFD3qUbGwL
+     10 O5ffmD1gTxN6wqrVj7s4qCGjViq2Eqa6
+     10 oILf8yUfdHCFFt9WNWZYaEwUoC0bReLx
+     10 orDOaXoJ10DsIkmME9gcO6yLbBwxpXsF
+     10 P5vWhXmYd0gOr2b9Ve87fPcX4ebXmrnT
+     10 pG92KDvNF72E1lI11bKDcVB8cuShHvCL
+     10 pGsKntQPZEAHsPVyKZ2W8DfS5AOA2zfh
+     10 pivhbnblpVTFpxkMDVkJp2atFy1ZVMxU
+     10 q8El9owtBMJWdGsBuO62g75Phfy9dncH
+     10 Qba9EGzTA1Q9VKZQ6MkZeuMtaURiDAP5
+     10 qdsJ1ka9OyeNalb3Qfb4FuEivVxXPbWV
+     10 qigoUSMGCC1DsaUPaub75ZldkGgdEfnG
+     10 qrRf9CQrKIAEN88BQZra13opLoQ6N49w
+     10 qUxVwhQfI9A8p2ZYBbqJmfyIYaTit9jF
+     10 r2gra3J7wdlA6PyhCtLwdJK4ui6zwP1S
+     10 rALHNTpoFfcyEOFZ9IJFylpWtbrDYKc9
+     10 rONbfZgtRvRleYugQxThNH97UjBUkQse
+     10 RoYVWxxdTSysjT9AGs6oJc8Kl8zIRYr9
+     10 rU0tb1OjOkN0uXXlm2UXtzDMZJTzJRyu
+     10 RwvVc5QCDyHzRQ8Nu0m6k1Z7ldMXzvhG
+     10 sD4L74J7uULJGV7OtJLZf88YFrgECYHG
+     10 sGpXrQ1HWg1us6ZYPxO1kXboV4dwASQ7
+     10 TKYhEc5szP8N38ifguBvEhaB9CgzjS8O
+     10 TQ32Is4RUR4z1ATTxwp8DL7rSgJkQiQj
+     10 txsHYDgGMnvqKqRZGaiCoO380o5DeBME
+     10 U6fRtWGxxx2JgitTcRpI8Eni5yrBX5uN
+     10 Uj3QPUc2uW5iF6EilFMOwIDGLxIzW8cv
+     10 vgMO06yomBjlpJWgy4iFZnJpTVmyLEE9
+     10 vUvJ0fcRGiyPVnxkyQvYT0EPmlYIsUMQ
+     10 vV6s2Yby5gSVRdjhpxtCxVCYgXAcxjaR
+     10 Wrjnd8eqif8WHgtfuXLagGMuduJCZZEH
+     10 wwegQMMQ7GYYbBQINPvtYMOyfA5P9Wiq
+     10 X1xRGbIqPDffRh7j8RXvgknNHDnfOHdU
+     10 xmeI3qSdYRGdE1hnvHojftBAH34FmdVh
+     10 xU2lsgWxcH2FuRUyaxFwAL8wc9uoWK1p
+     10 XVwR5HGsVlKyb9JbQLfQzv3UN285E9Ew
+     10 xZ7xRIvDhE8A5e3qlN2VkjJ6qbQOz2UQ
+     10 Ylnm1D5XD7gYpLrAt0lpBaFEPdc8rImO
+     10 yp5cA05EPthR9fB14X4TbciZskBacwR9
+     10 yvEgOK8Gcd6ylyb6EA5xtKJ2YiYcFAXo
+     10 Za1uRtqD2ZQw3SxaGoHJC5yW7c4917gd
+     10 zkMxeSKoehT6Vr91dmmcIruQuHAIl5Zf
+     10 zkubZ8DkI0ycTYiXxcomFS0NJMFhj3J9
+     10 zNRTWxjWa9ImRMTDxrSAf5VfaTcOFxXC
+     10 ZpnAurXvto4z1V8ySf59BjY2Ieq2xa7y
+bandit8@bandit:~$
