@@ -1,0 +1,333 @@
+bandit13@bandit:~$ ls
+HINT  sshkey.private
+bandit13@bandit:~$ ls -ld sshkey.private
+-rw-r----- 1 bandit14 bandit13 2602 Sep 26 21:52 sshkey.private
+bandit13@bandit:~$ cat HINT
+If you have trouble with this level, note the following:
+
+1) As for all other levels, this level has a website with information:
+   https://overthewire.org/wargames/bandit/bandit14.html
+2) No, the level is not broken. To verify, see:
+   https://status.overthewire.org/
+3) The current version of OverTheWire prevents logging in from one
+   level to another via localhost. Log out, and see 1)
+4) If you get errors, read the error message on your screen.
+   We mean it!
+bandit13@bandit:~$ ssh -i sshkey.private bandit14@localhost
+The authenticity of host 'localhost (127.0.0.1)' can't be established.
+ED25519 key fingerprint is: SHA256:C2ihUBV7ihnV1wUXRb4RrEcLfXC5CXlhmAAM/urerLY
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Could not create directory '/home/bandit13/.ssh' (Permission denied).
+Failed to add the host to the list of known hosts (/home/bandit13/.ssh/known_hosts).
+
+                      This is an OverTheWire game server.
+            More information on http://www.overthewire.org/wargames
+
+!!! You are trying to log into this SSH server on port 22, which is not intended.
+!!! If you are trying to log in to an OverTheWire game, use the port mentioned in
+!!! the "SSH Information" on that game's webpage (in the top left corner).
+
+bandit14@localhost: Permission denied (publickey).
+bandit13@bandit:~$ ssh -i sshkey.private bandit14@localhost -port 220
+Bad port 'ort'
+bandit13@bandit:~$ ssh -i sshkey.private bandit14@localhost -port 2220
+Bad port 'ort'
+bandit13@bandit:~$ ssh -i sshkey.private bandit14@localhost -p 2220
+The authenticity of host '[localhost]:2220 ([127.0.0.1]:2220)' can't be established.
+ED25519 key fingerprint is: SHA256:C2ihUBV7ihnV1wUXRb4RrEcLfXC5CXlhmAAM/urerLY
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Could not create directory '/home/bandit13/.ssh' (Permission denied).
+Failed to add the host to the list of known hosts (/home/bandit13/.ssh/known_hosts).
+                         _                     _ _ _
+                        | |__   __ _ _ __   __| (_) |_
+                        | '_ \ / _` | '_ \ / _` | | __|
+                        | |_) | (_| | | | | (_| | | |_
+                        |_.__/ \__,_|_| |_|\__,_|_|\__|
+
+
+                      This is an OverTheWire game server.
+            More information on http://www.overthewire.org/wargames
+
+!!! You are trying to log into this SSH server from localhost.
+!!! Connecting from/to localhost is blocked to conserve resources.
+!!! Please log out and log in again, directly from your client machine.
+
+backend: gibson-1
+Received disconnect from 127.0.0.1 port 2220:2: no authentication methods enabled
+Disconnected from 127.0.0.1 port 2220
+bandit13@bandit:~$ cat sshkey.private
+-----BEGIN OPENSSH PRIVATE KEY-----
+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
+-----END OPENSSH PRIVATE KEY-----
+bandit13@bandit:~$
+
+This key should be used to open ssh of bandit14  steps down below  --> use scp to download it and 
+
+Run these two icacls commands in PowerShell to restrict access: WINDOWS 
+
+icacls .\bandit14.key /inheritance:r
+icacls .\bandit14.key /grant:r "$($env:USERNAME):(R)"
+
+==============================================================================================================================================================================================================================
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+PS C:\Users\YUVARAJ> scp -P 2220 bandit13@bandit.labs.overthewire.org:~/sshkey.private .\bandit14.key
+                         _                     _ _ _
+                        | |__   __ _ _ __   __| (_) |_
+                        | '_ \ / _` | '_ \ / _` | | __|
+                        | |_) | (_| | | | | (_| | | |_
+                        |_.__/ \__,_|_| |_|\__,_|_|\__|
+
+
+                      This is an OverTheWire game server.
+            More information on http://www.overthewire.org/wargames
+
+backend: gibson-1
+bandit13@bandit.labs.overthewire.org's password:
+sshkey.private                                                                        100% 2602     6.3KB/s   00:00
+PS C:\Users\YUVARAJ> Test-Path .\bandit14.key
+True
+PS C:\Users\YUVARAJ> icacls .\bandit14.key /inheritance:r
+processed file: .\bandit14.key
+Successfully processed 1 files; Failed processing 0 files
+PS C:\Users\YUVARAJ> icacls .\bandit14.key /grant:r "$($env:USERNAME):(R)"
+processed file: .\bandit14.key
+Successfully processed 1 files; Failed processing 0 files
+PS C:\Users\YUVARAJ> ssh -i .\bandit14.key bandit14@bandit.labs.overthewire.org -p 2220
+                         _                     _ _ _
+                        | |__   __ _ _ __   __| (_) |_
+                        | '_ \ / _` | '_ \ / _` | | __|
+                        | |_) | (_| | | | | (_| | | |_
+                        |_.__/ \__,_|_| |_|\__,_|_|\__|
+
+
+                      This is an OverTheWire game server.
+            More information on http://www.overthewire.org/wargames
+
+backend: gibson-1
+
+      ,----..            ,----,          .---.
+     /   /   \         ,/   .`|         /. ./|
+    /   .     :      ,`   .'  :     .--'.  ' ;
+   .   /   ;.  \   ;    ;     /    /__./ \ : |
+  .   ;   /  ` ; .'___,/    ,' .--'.  '   \' .
+  ;   |  ; \ ; | |    :     | /___/ \ |    ' '
+  |   :  | ; | ' ;    |.';  ; ;   \  \;      :
+  .   |  ' ' ' : `----'  |  |  \   ;  `      |
+  '   ;  \; /  |     '   :  ;   .   \    .\  ;
+   \   \  ',  /      |   |  '    \   \   ' \ |
+    ;   :    /       '   :  |     :   '  |--"
+     \   \ .'        ;   |.'       \   \ ;
+  www. `---` ver     '---' he       '---" ire.org
+
+
+Welcome to OverTheWire!
+
+If you find any problems, please report them to the #wargames channel on
+discord or IRC.
+
+--[ Playing the games ]--
+
+  This machine might hold several wargames.
+  If you are playing "somegame", then:
+
+    * USERNAMES are somegame0, somegame1, ...
+    * Most LEVELS are stored in /somegame/.
+    * PASSWORDS for each level are stored in /etc/somegame_pass/.
+
+  Write-access to homedirectories is disabled. It is advised to create a
+  working directory with a hard-to-guess name in /tmp/.  You can use the
+  command "mktemp -d" in order to generate a random and hard to guess
+  directory in /tmp/.  Read-access to both /tmp/ is disabled and to /proc
+  restricted so that users cannot snoop on eachother. Files and directories
+  with easily guessable or short names will be periodically deleted! The /tmp
+  directory is regularly wiped.
+  Please play nice:
+
+    * don't leave orphan processes running
+    * don't leave exploit-files laying around
+    * don't annoy other players
+    * don't post passwords or spoilers
+    * again, DONT POST SPOILERS!
+      This includes writeups of your solution on your blog or website!
+
+--[ Tips ]--
+
+  This machine has a 64bit processor and many security-features enabled
+  by default, although ASLR has been switched off.  The following
+  compiler flags might be interesting:
+
+    -m32                    compile for 32bit
+    -fno-stack-protector    disable ProPolice
+    -Wl,-z,norelro          disable relro
+
+  In addition, the execstack tool can be used to flag the stack as
+  executable on ELF binaries.
+
+  Finally, network-access is limited for most levels by a local
+  firewall.
+
+--[ Tools ]--
+
+ For your convenience we have installed a few useful tools which you can find
+ in the following locations:
+
+    * gef (https://github.com/hugsy/gef) in /opt/gef/
+    * pwndbg (https://github.com/pwndbg/pwndbg) in /opt/pwndbg/
+    * gdbinit (https://github.com/gdbinit/Gdbinit) in /opt/gdbinit/
+    * pwntools (https://github.com/Gallopsled/pwntools)
+    * radare2 (http://www.radare.org/)
+
+--[ More information ]--
+
+  For more information regarding individual wargames, visit
+  http://www.overthewire.org/wargames/
+
+  For support, questions or comments, contact us on discord or IRC.
+
+  Enjoy your stay!
+
+bandit14@bandit:~$ cd /etc/bandit_pass/bandit14
+-bash: cd: /etc/bandit_pass/bandit14: Not a directory
+bandit14@bandit:~$ ls
+bandit14@bandit:~$ cd ..
+bandit14@bandit:/home$ ls
+bandit0   bandit22      bandit31-git  behemoth6  drifter7     krypton7    manpage6  narnia3  utumno7   vortex20
+bandit1   bandit23      bandit32      behemoth7  drifter8     leviathan0  manpage7  narnia4  utumno8   vortex21
+bandit10  bandit24      bandit33      behemoth8  drifter9     leviathan1  maze0     narnia5  vortex0   vortex22
+bandit11  bandit25      bandit4       drifter0   formulaone0  leviathan2  maze1     narnia6  vortex1   vortex23
+bandit12  bandit26      bandit5       drifter1   formulaone1  leviathan3  maze2     narnia7  vortex10  vortex24
+bandit13  bandit27      bandit6       drifter10  formulaone2  leviathan4  maze3     narnia8  vortex11  vortex25
+bandit14  bandit27-git  bandit7       drifter12  formulaone3  leviathan5  maze4     narnia9  vortex12  vortex3
+bandit15  bandit28      bandit8       drifter13  formulaone5  leviathan6  maze5     ubuntu   vortex13  vortex4
+bandit16  bandit28-git  bandit9       drifter14  formulaone6  leviathan7  maze6     utumno0  vortex14  vortex5
+bandit17  bandit29      behemoth0     drifter15  krypton1     manpage0    maze7     utumno1  vortex15  vortex6
+bandit18  bandit29-git  behemoth1     drifter2   krypton2     manpage1    maze8     utumno2  vortex16  vortex7
+bandit19  bandit3       behemoth2     drifter3   krypton3     manpage2    maze9     utumno3  vortex17  vortex8
+bandit2   bandit30      behemoth3     drifter4   krypton4     manpage3    narnia0   utumno4  vortex18  vortex9
+bandit20  bandit30-git  behemoth4     drifter5   krypton5     manpage4    narnia1   utumno5  vortex19
+bandit21  bandit31      behemoth5     drifter6   krypton6     manpage5    narnia2   utumno6  vortex2
+bandit14@bandit:/home$ cd /
+bandit14@bandit:/$ cd /etc/bandit_pass/bandit14
+-bash: cd: /etc/bandit_pass/bandit14: Not a directory
+bandit14@bandit:/$ ls
+behemoth  dev      formulaone  lib    libx32      maze   narnia  root  snap  tmp     var
+bin       drifter  home        lib32  lost+found  media  opt     run   srv   usr     vortex
+boot      etc      krypton     lib64  manpage     mnt    proc    sbin  sys   utumno
+bandit14@bandit:/$ cd /etc
+bandit14@bandit:/etc$ ls
+ModemManager                   gprofng.rc                  libblockdev             rc6.d
+PackageKit                     groff                       libibverbs.d            rcS.d
+X11                            group                       libnl-3                 resolv.conf
+acpi                           group-                      locale.conf             rmt
+adduser.conf                   grub.d                      locale.gen              rpc
+alternatives                   gshadow                     localtime               rsyslog.conf
+apparmor                       gshadow-                    logcheck                rsyslog.d
+apparmor.d                     gss                         login.defs              screenrc
+apport                         gtk-3.0                     logrotate.conf          security
+apt                            hdparm.conf                 logrotate.d             selinux
+bandit_pass                    hibinit-config.cfg          lsb-release             sensors.d
+bash.bashrc                    host.conf                   ltrace.conf             sensors3.conf
+bash_completion                hostname                    lvm                     services
+bash_completion.d              hosts                       machine-id              sgml
+behemoth_pass                  hosts.allow                 magic                   shadow
+bindresvport.blacklist         hosts.deny                  magic.mime              shadow-
+binfmt.d                       init.d                      manpage_pass            shells
+ca-certificates                initramfs-tools             manpath.config          skel
+ca-certificates.conf           inputrc                     maze_pass               sos
+ca-certificates.conf.dpkg-old  iscsi                       mdadm                   ssh
+chrony                         issue                       mime.types              ssl
+cloud                          issue.bandit                mke2fs.conf             stunnel
+console-setup                  issue.bandit.fail           modprobe.d              subgid
+cowpoke.conf                   issue.bandit.localhost      modules                 subgid-
+credstore                      issue.behemoth              modules-load.d          subuid
+credstore.encrypted            issue.behemoth.fail         motd                    subuid-
+cron.d                         issue.behemoth.localhost    mtab                    sudo.conf
+cron.daily                     issue.drifter               multipath               sudo_logsrvd.conf
+cron.hourly                    issue.drifter.fail          multipath.conf          sudoers
+cron.monthly                   issue.drifter.localhost     nanorc                  sudoers.d
+cron.weekly                    issue.formulaone            narnia_pass             supercat
+cron.yearly                    issue.formulaone.fail       needrestart             supervisor
+crontab                        issue.formulaone.localhost  netconfig               sysctl.conf
+crypttab                       issue.krypton               netplan                 sysctl.d
+dbus-1                         issue.krypton.fail          network                 sysstat
+dconf                          issue.krypton.localhost     networkd-dispatcher     systemd
+debconf.conf                   issue.leviathan             networks                terminfo
+debian_version                 issue.leviathan.fail        newt                    tmpfiles.d
+debuginfod                     issue.leviathan.localhost   nftables.conf           tpm2-tss
+default                        issue.manpage               nsswitch.conf           ubuntu-advantage
+deluser.conf                   issue.manpage.fail          opt                     ucf.conf
+depmod.d                       issue.manpage.localhost     os-release              udev
+devscripts.conf                issue.maze                  overlayroot.conf        udisks2
+dhcp                           issue.maze.fail             overlayroot.local.conf  ufw
+dhcpcd.conf                    issue.maze.localhost        pam.conf                update-manager
+dpkg                           issue.narnia                pam.d                   update-motd.d
+dput.cf                        issue.narnia.fail           passwd                  update-notifier
+dracut.conf                    issue.narnia.localhost      passwd-                 usb_modeswitch.conf
+dracut.conf.d                  issue.net                   perl                    usb_modeswitch.d
+drifter_pass                   issue.utumno                pki                     utumno_pass
+e2scrub.conf                   issue.utumno.fail           plymouth                vconsole.conf
+ec2_version                    issue.utumno.localhost      pm                      vim
+emacs                          issue.vortex                polkit-1                vmware-tools
+environment                    issue.vortex.fail           ppp                     vortex_pass
+ethertypes                     issue.vortex.localhost      profile                 vtrgb
+fonts                          kernel                      profile.d               vulkan
+formulaone_pass                krypton_pass                protocols               watchdog.conf
+fstab                          landscape                   python3                 wgetrc
+fuse.conf                      ld.so.cache                 python3.14              xattr.conf
+fwupd                          ld.so.conf                  rc0.d                   xdg
+gai.conf                       ld.so.conf.d                rc1.d                   xinetd.conf
+gdb                            ldap                        rc2.d                   xinetd.d
+gitconfig                      legal                       rc3.d                   xml
+glvnd                          leviathan_pass              rc4.d                   zsh_command_not_found
+gnutls                         libaudit.conf               rc5.d
+bandit14@bandit:/etc$ cd bandit14
+-bash: cd: bandit14: No such file or directory
+bandit14@bandit:/etc$ cd bandit_pass/
+bandit14@bandit:/etc/bandit_pass$ ls
+bandit0   bandit11  bandit14  bandit17  bandit2   bandit22  bandit25  bandit28  bandit30  bandit33  bandit6  bandit9
+bandit1   bandit12  bandit15  bandit18  bandit20  bandit23  bandit26  bandit29  bandit31  bandit4   bandit7
+bandit10  bandit13  bandit16  bandit19  bandit21  bandit24  bandit27  bandit3   bandit32  bandit5   bandit8
+bandit14@bandit:/etc/bandit_pass$ cd bandit14
+-bash: cd: bandit14: Not a directory
+bandit14@bandit:/etc/bandit_pass$ cat bandit14
+aaWecNkG4FhxJQxz07uiwzVP6bJiYS65
+bandit14@bandit:/etc/bandit_pass$
