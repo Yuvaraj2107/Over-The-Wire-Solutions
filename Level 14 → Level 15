@@ -1,0 +1,16 @@
+
+The password for the next level can be retrieved by submitting the password of the current level to port 30000 on localhost.
+
+
+
+Password ---->pbLYuZtTg4MgaqfJx8jbA9gKKGqM68A7
+
+
+bandit14@bandit:~$ nc -zv localhost  30000
+Connection to localhost (127.0.0.1) 30000 port [tcp/*] succeeded!
+bandit14@bandit:~$ nc localhost 30000
+aaWecNkG4FhxJQxz07uiwzVP6bJiYS65
+Correct!
+pbLYuZtTg4MgaqfJx8jbA9gKKGqM68A7
+
+
